@@ -4,7 +4,11 @@
     <a v-bind:="objectOfAttrs">Enlace</a>
     <button @click="changeAttrs">Cambiar Atributos</button>
     <h3 v-show="age >= 18">Valor es verdadero</h3>
-    <h3 v-show="age < 18">Valor es falso</h3>
+    <h3 v-show="age < 18">Valor es falso</h3><br><br>
+
+    <ul>
+        <li v-for="(country, index) in countries" :id="`country-${index}`">{{ country }}</li>
+    </ul>
 </template>
 
 <script setup>
@@ -25,11 +29,12 @@
         const newStyle = {
             color : "black",
             backgroundColor: "orange",
-            display: "block"
+            display: "inline"
         }
         objectOfAttrs.style = newStyle
     }
 
+    const countries = ref(["Panamá", "Colombia", "México", "Brasil", "Argentina"])
 
 
 </script>
